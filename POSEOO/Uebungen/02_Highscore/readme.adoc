@@ -1,0 +1,42 @@
+:sectnums:
+:nofooter:
+:toc: left
+:icons: font
+
+= Rep.02 -- Game Highscore
+
+In this exercise you are going to process a lot of scores different gamers achieved in a challenging game.
+You will determine a highscore: a list of each player's best result, sorted from the highest scorer to the least.
+
+== File Descriptions
+
+=== Input File
+
+The input file(s) are CSV files.
+One file can contain multiple score results from each user; on different dates.
+
+* Format: `Id;NickName;Date;Score`.
+* Sample: `9;CrazyBull;2021-07-22T14:43:28;2428`
+
+=== Output File
+
+The output is a CSV file which contains one entry for each user who provided at least one score in the input.
+
+* Format: `Score;Date;Player`
+* Sample: `1013;07.08.2022;Iron-Cut (#85)`
+
+The output is sorted:
+
+* Highest score first
+* If two scores are equal the older (earlier) date 'wins'
+
+== Task
+
+Create an application which reads & parses the input file, consolidates and sorts the game scores and finally creates a CSV file containing the highscore.
+Make sure you stick to the required formats of the files.
+
+To make it easier for you the definitions of all required methods have already been provided with the starter code.
+Implement those according to the specification to complete this exercise.
+You may add additional methods if you deem them necessary.
+
+NOTE: Use the `record` definitions provided in `Model.cs` and be aware that especially the output format will not map 1:1 to those data types, yet they contain all required information

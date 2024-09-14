@@ -1,0 +1,15 @@
+C:\Users\User\OneDrive\Desktop\HTL-Leonding-Year2\POSEOO\Uebungen\02_Highscore\starter\Highscore\bin\Debug\net6.0\Data\scores.csv
+C:\Users\User\OneDrive\Desktop\HTL-Leonding-Year2\POSEOO\Uebungen\02_Highscore\starter\Highscore\bin\Debug\net6.0\Highscore.exe
+C:\Users\User\OneDrive\Desktop\HTL-Leonding-Year2\POSEOO\Uebungen\02_Highscore\starter\Highscore\bin\Debug\net6.0\Highscore.deps.json
+C:\Users\User\OneDrive\Desktop\HTL-Leonding-Year2\POSEOO\Uebungen\02_Highscore\starter\Highscore\bin\Debug\net6.0\Highscore.runtimeconfig.json
+C:\Users\User\OneDrive\Desktop\HTL-Leonding-Year2\POSEOO\Uebungen\02_Highscore\starter\Highscore\bin\Debug\net6.0\Highscore.dll
+C:\Users\User\OneDrive\Desktop\HTL-Leonding-Year2\POSEOO\Uebungen\02_Highscore\starter\Highscore\bin\Debug\net6.0\Highscore.pdb
+C:\Users\User\OneDrive\Desktop\HTL-Leonding-Year2\POSEOO\Uebungen\02_Highscore\starter\Highscore\obj\Debug\net6.0\Highscore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\OneDrive\Desktop\HTL-Leonding-Year2\POSEOO\Uebungen\02_Highscore\starter\Highscore\obj\Debug\net6.0\Highscore.AssemblyInfoInputs.cache
+C:\Users\User\OneDrive\Desktop\HTL-Leonding-Year2\POSEOO\Uebungen\02_Highscore\starter\Highscore\obj\Debug\net6.0\Highscore.AssemblyInfo.cs
+C:\Users\User\OneDrive\Desktop\HTL-Leonding-Year2\POSEOO\Uebungen\02_Highscore\starter\Highscore\obj\Debug\net6.0\Highscore.csproj.CoreCompileInputs.cache
+C:\Users\User\OneDrive\Desktop\HTL-Leonding-Year2\POSEOO\Uebungen\02_Highscore\starter\Highscore\obj\Debug\net6.0\Highscore.dll
+C:\Users\User\OneDrive\Desktop\HTL-Leonding-Year2\POSEOO\Uebungen\02_Highscore\starter\Highscore\obj\Debug\net6.0\refint\Highscore.dll
+C:\Users\User\OneDrive\Desktop\HTL-Leonding-Year2\POSEOO\Uebungen\02_Highscore\starter\Highscore\obj\Debug\net6.0\Highscore.pdb
+C:\Users\User\OneDrive\Desktop\HTL-Leonding-Year2\POSEOO\Uebungen\02_Highscore\starter\Highscore\obj\Debug\net6.0\Highscore.genruntimeconfig.cache
+C:\Users\User\OneDrive\Desktop\HTL-Leonding-Year2\POSEOO\Uebungen\02_Highscore\starter\Highscore\obj\Debug\net6.0\ref\Highscore.dll
