@@ -1,0 +1,16 @@
+U:\Pose-Y2\LottoChecker\LottoChecker\LottoChecker\bin\Debug\net8.0\LottoChecker.exe
+U:\Pose-Y2\LottoChecker\LottoChecker\LottoChecker\bin\Debug\net8.0\LottoTipps.csv
+U:\Pose-Y2\LottoChecker\LottoChecker\LottoChecker\bin\Debug\net8.0\LottoChecker.deps.json
+U:\Pose-Y2\LottoChecker\LottoChecker\LottoChecker\bin\Debug\net8.0\LottoChecker.runtimeconfig.json
+U:\Pose-Y2\LottoChecker\LottoChecker\LottoChecker\bin\Debug\net8.0\LottoChecker.dll
+U:\Pose-Y2\LottoChecker\LottoChecker\LottoChecker\bin\Debug\net8.0\LottoChecker.pdb
+U:\Pose-Y2\LottoChecker\LottoChecker\LottoChecker\obj\Debug\net8.0\LottoChecker.GeneratedMSBuildEditorConfig.editorconfig
+U:\Pose-Y2\LottoChecker\LottoChecker\LottoChecker\obj\Debug\net8.0\LottoChecker.AssemblyInfoInputs.cache
+U:\Pose-Y2\LottoChecker\LottoChecker\LottoChecker\obj\Debug\net8.0\LottoChecker.AssemblyInfo.cs
+U:\Pose-Y2\LottoChecker\LottoChecker\LottoChecker\obj\Debug\net8.0\LottoChecker.csproj.CoreCompileInputs.cache
+U:\Pose-Y2\LottoChecker\LottoChecker\LottoChecker\obj\Debug\net8.0\LottoChecker.dll
+U:\Pose-Y2\LottoChecker\LottoChecker\LottoChecker\obj\Debug\net8.0\refint\LottoChecker.dll
+U:\Pose-Y2\LottoChecker\LottoChecker\LottoChecker\obj\Debug\net8.0\LottoChecker.pdb
+U:\Pose-Y2\LottoChecker\LottoChecker\LottoChecker\obj\Debug\net8.0\LottoChecker.genruntimeconfig.cache
+U:\Pose-Y2\LottoChecker\LottoChecker\LottoChecker\obj\Debug\net8.0\ref\LottoChecker.dll
+U:\Pose-Y2\LottoChecker\LottoChecker\LottoChecker\bin\Debug\net8.0\bin\Debug\net8.0\LottoTipps.csv
