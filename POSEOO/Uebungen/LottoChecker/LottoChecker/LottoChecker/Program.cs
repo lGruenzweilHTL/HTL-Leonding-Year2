@@ -1,54 +1,63 @@
-﻿using System.Text;
+﻿using System.Diagnostics;
+using System.Text;
 
 internal class Program
 {
-    public record Tip(string id, int[] numbers);
-
     private const string VALID_TIPS = "ValidLottoTips.csv";
     private const string INVALID_TIPS = "InvalidLottoTips.csv";
     private const string HEADER = "ID;Num1;Num2;Num3;Num4;Num5;Num6";
     
-    public static void Main(string[] args)
+    public static void Main()
     {
         // When is a tip valid?
         // Exactly 6 numbers (7 columns in file)
         // Numbers between 1 and 45
         // Every number is distinct
+
+        Stopwatch time = Stopwatch.StartNew();
         
         string[] lines = File.ReadAllLines("LottoTipps.csv")[1..];
         
         string invalidLines = HEADER;
-        FileStream validStream = new FileStream(VALID_TIPS, FileMode.Open);
+        StreamWriter validStream = new(VALID_TIPS);
+        validStream.Write(HEADER);
+        
+        Stopwatch processTime = Stopwatch.StartNew();
         // Validate
         foreach (var line in lines)
         {
-            if (!TryParseCsvLine(line, out Tip? tip) || !TipIsValid(tip!.numbers))
+            if (!TryParseCsvLine(line, out int[] tip) || !TipIsValid(tip))
             {
                 invalidLines += $"\n{line}";
             }
             else
             {
-                validStream.Write(Encoding.ASCII.GetBytes($"\n{line}"));
+                validStream.Write($"\n{line}");
             }
         }
         
+        processTime.Stop();
+        
         validStream.Close();
         File.WriteAllText(INVALID_TIPS, invalidLines);
+        
+        time.Stop();
+        Console.WriteLine($"Processing finished in {processTime.ElapsedMilliseconds}ms");
+        Console.WriteLine($"Whole process finished in {time.ElapsedMilliseconds}ms");
     }
 
-    private static bool TryParseCsvLine(string line, out Tip? tip)
+    private static bool TryParseCsvLine(string line, out int[] tip)
     {
         tip = null;
         
         string[] parts = line.Split(';');
-        string id = parts[0];
         int[] nums = new int[parts.Length - 1];
         for (int i = 1; i < parts.Length; i++)
         {
             if (!int.TryParse(parts[i], out nums[i-1])) return false;
         }
-        
-        tip = new Tip(id, nums);
+
+        tip = nums;
         return true;
     }
 
