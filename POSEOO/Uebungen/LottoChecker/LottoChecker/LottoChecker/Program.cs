@@ -46,7 +46,7 @@ internal class Program
         Console.WriteLine($"Whole process finished in {time.ElapsedMilliseconds}ms");
     }
 
-    private static bool TryParseCsvLine(string line, out int[] tip)
+    public static bool TryParseCsvLine(string line, out int[] tip)
     {
         tip = null;
         
@@ -61,7 +61,7 @@ internal class Program
         return true;
     }
 
-    private static bool TipIsValid(int[] nums)
+    public static bool TipIsValid(int[] nums)
     {
         bool distinctNumbers = nums.Distinct().Count() == 6;
         bool isValid = nums.All(n => n is >= 1 and <= 45) && distinctNumbers;
