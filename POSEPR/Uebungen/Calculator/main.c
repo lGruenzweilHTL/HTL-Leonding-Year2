@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int main(int argc, char *argv[]){
     // Declare
@@ -6,15 +7,21 @@ int main(int argc, char *argv[]){
     double num1, num2;
     
     // Read
-    printf("Enter operation [+, -, *, /]: ");
-    scanf("%c", &op);
+  
+    if (argc == 4){ // Program name + 3 args
+      op = *argv[2];
+      num1 = atoi(argv[1]);
+      num2 = atoi(argv[3]);
+    } else {
+      printf("Enter operation [+, -, *, /]: ");
+      scanf("%c", &op);
 
-    printf("Enter first number: ");
-    scanf("%lf", &num1);
+      printf("Enter first number: ");
+      scanf("%lf", &num1);
 
-    printf("Enter second number: ");
-    scanf("%lf", &num2);
-
+      printf("Enter second number: ");
+      scanf("%lf", &num2);
+    }
     // Calculate
     double result;
     if (op == '+'){
