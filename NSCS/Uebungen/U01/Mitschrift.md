@@ -22,6 +22,9 @@ Es wird aus einem bestimmten Bereich eine verfügbare IP-Adresse zugewiesen.
 ## DNS-Server
 Der DNS-Server übersetzt Domain-Namen in IP-Adressen.
 
+## DHCP
+Der DHCP-Server weist jedem Gerät eine IP-Adresse zu. Außerdem vergibt er den Default-Gateway und den DNS-Server.
+
 ## WLAN
 WLAN = Wireless Local Area Network
 ### SSID
