@@ -23,8 +23,8 @@ public sealed class Horse
     public int CompareTo(Horse other)
     {
         return Position == other.Position
-            ? StartNumber - other.StartNumber
-            : Position - other.Position;
+            ? other.StartNumber - StartNumber
+            : other.Position - Position;
     }
 
     /// <summary>
@@ -55,11 +55,7 @@ public sealed class Horse
     ///     Randomly either increases or keeps the position of the <see cref="Horse" />.
     /// </summary>
     public void Move() {
-        const float MOVE_CHANCE = 0.5f;
-        if (RandomProvider.Random.NextDouble() < MOVE_CHANCE)
-        {
-            Position++;
-        }
+        if(RandomProvider.Random.Next(3) == 0) Position++;
     }
 
     /// <summary>
@@ -74,9 +70,14 @@ public sealed class Horse
         horse = null;
         
         var parts = csvLine.Split(';');
+        
+        if (parts.Length != 2) return false;
+        
         string name = parts[0];
         if (string.IsNullOrWhiteSpace(name)) return false;
         if (!int.TryParse(parts[1], out int age)) return false;
+        
+        if (string.IsNullOrEmpty(name) || startNo < 0 || age is <= 0 or > 20) return false;
         
         horse = new Horse(name, age, startNo);
         return true;

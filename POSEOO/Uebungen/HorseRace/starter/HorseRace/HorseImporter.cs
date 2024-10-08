@@ -8,17 +8,24 @@ public static class HorseImporter
         if (!File.Exists(filePath)) return false;
 
         string[] lines = File.ReadAllLines(filePath);
+        if (lines.Length < 2) return false;
         horses = new Horse[lines.Length-1];
-        
+
+        int valid = 0;
         for (int i = 1; i < lines.Length; i++)
         {
-            if (!Horse.TryParse(lines[i], i, out horses[i-1]!))
+            if (Horse.TryParse(lines[i], i, out var horse))
             {
-                horses = null;
-                return false;
+                horses[valid++] = horse!;
             }
         }
-        
+
+        if (valid == 0)
+        {
+            horses = Array.Empty<Horse>();
+            return false;
+        }
+        Array.Resize(ref horses, valid);
         return true;
     } 
 }

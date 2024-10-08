@@ -68,6 +68,8 @@ public sealed class HorseRace
     /// </summary>
     private void MoveHorses()
     {
+        if (IsFinished) return;
+        
         // Move each horse
         foreach (Horse h in _horses)
         {
@@ -75,6 +77,7 @@ public sealed class HorseRace
             if (h.Position >= MAX_STEPS)
             {
                 IsFinished = true;
+                break;
             }
         }
     }
@@ -95,9 +98,14 @@ public sealed class HorseRace
     /// </summary>
     private void AssignRanks() {
         SortByPosition();
-
-        for (var i = 0; i < _horses.Length; i++) {
-            _horses[i].Rank = i + 1;
+        int currRank = 0;
+        int lastPos = -1;
+        
+        foreach (var horse in _horses)
+        {
+            if (horse.Position != lastPos) currRank++;
+            horse.Rank = currRank;
+            lastPos = horse.Position;
         }
     }
 
