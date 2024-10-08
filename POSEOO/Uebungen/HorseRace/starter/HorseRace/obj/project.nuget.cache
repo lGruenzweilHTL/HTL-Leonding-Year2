@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "mxaU0p69v78TO+4T74xw8Sg5Cqqi7ZU/Ji0biY8ihkWS8m02d3B8eePnysz8/wjH+fYkNnguXMGk0ZPcU/mfoA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\lukas_yfujc6v\\OneDrive\\Desktop\\HTL-Leonding-Year2\\POSEOO\\Uebungen\\HorseRace\\starter\\HorseRace\\HorseRace.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\lukas_yfujc6v\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.30\\microsoft.netcore.app.ref.6.0.30.nupkg.sha512",
+    "C:\\Users\\lukas_yfujc6v\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.30\\microsoft.windowsdesktop.app.ref.6.0.30.nupkg.sha512",
+    "C:\\Users\\lukas_yfujc6v\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.30\\microsoft.aspnetcore.app.ref.6.0.30.nupkg.sha512",
+    "C:\\Users\\lukas_yfujc6v\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.30\\microsoft.netcore.app.host.win-x64.6.0.30.nupkg.sha512"
+  ],
+  "logs": []
+}
