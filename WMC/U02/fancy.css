@@ -1,0 +1,49 @@
+body{
+    background: #1C1C1C;
+    color: whitesmoke;
+}
+
+h1 {
+    font-size: 75px;
+    font-family: "Wide Latin", sans-serif;
+    animation: hover 5s infinite linear;
+    text-align: center;
+    margin-top: 50px;
+}
+
+p {
+    font-size: 20px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #FF4500, #1E90FF);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+
+@keyframes hover {
+    0% {
+        color: #f00;
+        scale: 1;
+        rotate: 0deg;
+    }
+    25% {
+        color: #0f0;
+        scale: 1.05;
+        rotate: 5deg;
+    }
+    50% {
+        color: #00f;
+        scale: 1.1;
+        rotate: 0deg;
+    }
+    75% {
+        color: #ff0;
+        scale: 1.05;
+        rotate: -5deg;
+    }
+    100% {
+        color: #f0f;
+        scale: 1;
+        rotate: 0deg;
+    }
+}
