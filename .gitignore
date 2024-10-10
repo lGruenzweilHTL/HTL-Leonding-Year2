@@ -1,2 +1,5 @@
 # Zip folders (only needed locally for submissions)
 *.zip
+
+## JetBrains .idea folder
+.idea
