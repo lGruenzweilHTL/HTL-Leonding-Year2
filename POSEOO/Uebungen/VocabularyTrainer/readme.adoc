@@ -1,0 +1,146 @@
+:sectnums:
+:nofooter:
+:toc: left
+:icons: font
+:data-uri:
+:source-highlighter: highlightjs
+
+= OOB.03 -- Vocabulary Trainer
+
+This time you are going to implement a vocabulary trainer.
+It will only be terminal based, but we'll use some fancy colors and headings at least.
+
+[plantuml]
+----
+@startuml
+package VocabularyTrainer {
+    class Trainer {
+        + static int CYCLE_COUNT
+        - VocabularyItem[] _vocabularyItems
+        - bool[] _alreadyAsked
+        - int _cycleCount
+        - int _currentVocabularyItemIndex
+        + VocabularyItem? CurrentVocabularyItem
+        + Trainer(string[][] wordsAndTranslations)
+        + void ResetCycle()
+        + void Reset()
+        + bool GetNextWord()
+        + bool TestTranslation(string translation, out string correctTranslation)
+        + VocabularyItem[] GetSortedItems()
+        - void PickNextWord()
+        - void Sort()
+    }
+
+    class VocabularyItem {
+         - static int WORD_IDX = 0;
+        - static int TRANSLATION_IDX = 1; 
+        + int CountCorrect
+        + int CountAsked
+        + VocabularyItem(string nativeWord, string translation)
+        + string NativeWord
+        + string Translation
+        + bool TestTranslation(string translationAttempt)
+        + int CompareTo(VocabularyItem other)
+        + string ToString()
+        - static int CompareStrings(string a, string b)
+        + void Reset()
+        + static VocabularyItem[] CreateVocabularyItems(string[][] wordsAndTranslations)
+    }
+
+    Trainer --> VocabularyItem : Uses
+}
+@enduml
+----
+== `VocabularyItem` class
+This class is meant to hold one 'word':
+
+. The 'native' word
+. The translation
+
+For example: 'horse' & 'Pferd'.
+
+It also holds information about the 'translation success' of the user who is currently training:
+
+* How often has the user tried to translate this specific word
+* How often did the user get it right (correct translation)
+
+The following operations are supported:
+
+* Test a user provided translation
+** Returns `true` or `false` accordingly
+** Updates the internal statistics
+* Compare to another instance of `VocabularyItem`
+** Used for sorting before displaying the statistics
+** First we compare the number of correct answers. Lower numbers first, to show the problematic words on top. +
+If those are equal we then compare the native words lexically.
+* Create a `string` representation of the `VocabularyItem` instance
+** This method requires the `override` keyword, we'll talk about that later.
+For now just put it there and be happy that everything works.
+* Compare two strings lexically while ignoring case
+** This is an internal helper method
+** Look up https://learn.microsoft.com/en-us/dotnet/api/system.string.compare?view=net-6.0[`string.Compare`] & `StringComparison.OrdinalIgnoreCase` in the documentation for the implementation of this method
+* Convert an array of word pairs into an array of `VocabularyItem` instances
+** This method is static, since it does not need access to any member variables
+** It is called by the `Trainer` class constructor
+** It is a so-called 'factory method' (more on that later).
+
+== `Trainer` class
+
+This class contains the vocabulary and is responsible for the training workflow.
+
+NOTE: The 'user interface' is handled by `Program`, be aware which class performs which action(s) based on its purpose
+
+It provides the following operations:
+
+* Constructor: Create a new instance of `Trainer` with a given set of words and translations.
+* ResetCycle: Reset the internal state of the trainer for a new cycle.
+* Reset: Reset the internal state of the trainer for a new training session.
+* GetNextWord: Get the next word to be translated. Returns `true` if there are more words to be translated in this cycle, `false` otherwise. Sets the `CurrentVocabularyItem` property.
+* TestTranslation: Test a user provided translation. Returns `true` if the translation is correct, `false` otherwise. Sets the `correctTranslation` out parameter.
+* GetSortedItems: Get the vocabulary items sorted by the number of correct answers and the native word.
+* PickNextWord: Already implemented, because otherwise the test cases would be impossible to define in advance. Helper function to pick the next word to be translated. A word is choosen randomly. If this word has already been asked in the current cycle, another word is choosen.  Try to understand the implementation. Use it in the `GetNextWord` method.
+* Sort: Helper function to sort the vocabulary items.
+
+=== Sequence of operation of the trainer
+The Trainer is initialized with a set of words and translations. The trainer is reset to start a new training session.
+```csharp
+string[][] wordsAndTranslations = new string[][] {  
+                new [] { "w1", "t1" }, ... }; 
+Trainer trainer = new Trainer(wordsAndTranslations);
+trainer.Reset();
+```
+
+The trainer works in cycles. A cycle is finished when all words have been asked once. The user can then decide to start a new cycle or to reset the training session.
+```csharp
+while (trainer.GetNextWord())
+{
+    // Get the current word to be translated
+    var currentVocabularyItem = trainer.CurrentVocabularyItem;
+    // Ask the user to translate the word
+    // Test the translation
+    var correct = trainer.TestTranslation(translation, out var correctTranslation);
+    ...
+}
+```
+
+Ask the user to continue with a new cycle or to reset the training session.
+If another cycle is started, the trainer is reset for a new cycle.
+```csharp
+trainer.ResetCycle();
+```
+
+If the trainer should be fully reset, the `Reset` method is called.
+```csharp
+trainer.Reset();
+```
+
+The trainer can provide the vocabulary items sorted by the number of correct answers and the native word. This can be used to print statistics of the training session.
+```csharp
+var sortedItems = trainer.GetSortedItems();
+```
+
+== `Program` class
+Mostly implemented. Insert the calls to the `Trainer` class methods at the right places.
+
+== Sample Run
+video::sample_run.mp4[Sample Run]
