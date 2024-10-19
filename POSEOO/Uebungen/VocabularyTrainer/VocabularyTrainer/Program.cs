@@ -139,7 +139,12 @@ static void PerformTrainingCycle(Trainer trainer)
  */
 static void PrintStatistics(Trainer trainer)
 {
-    Console.WriteLine($"{"Native Word",-10} {"Translation",-10} {"Asked",5} {"Correct",7}");
+    Console.Clear();
+    Console.ForegroundColor = ConsoleColor.DarkCyan;
+    Console.WriteLine(FiggleFonts.Standard.Render("Training Statistics"));
+    Console.WriteLine($"{"English",-10} {"German",-10} {"Asked",-5} {"Correct",-7}");
+    Console.WriteLine(new string('-', 35));
+    Console.ForegroundColor = ConsoleColor.DarkYellow;
     Console.WriteLine(string.Join("\n", trainer.GetSortedItems().Select(i => i.ToString())));
 
     Console.WriteLine();
