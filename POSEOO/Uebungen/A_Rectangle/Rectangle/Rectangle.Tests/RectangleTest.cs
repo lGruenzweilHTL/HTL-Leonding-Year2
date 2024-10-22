@@ -1,3 +1,4 @@
+using System;
 using JetBrains.Annotations;
 using Xunit;
 using FluentAssertions;
@@ -19,7 +20,7 @@ public class RectangleTest {
         rect.Area.Should().Be(1);
         rect.Perimeter.Should().Be(4);
         
-        rect.Color.Should().Be(default);
+        rect.Color.Should().Be(ConsoleColor.White);
     }
     
     [Fact]
@@ -34,11 +35,49 @@ public class RectangleTest {
         rect.Area.Should().Be(30);
         rect.Perimeter.Should().Be(22);
         
-        rect.Color.Should().Be(default);
+        rect.Color.Should().Be(ConsoleColor.White);
+    }
+
+    [Fact]
+    public void TestColorSet()
+    {
+        Rectangle rect = new Rectangle();
+
+        rect.Color.Should().Be(ConsoleColor.White);
+
+        rect.Color = ConsoleColor.Red;
+        rect.Color.Should().Be(ConsoleColor.Red);
+    }
+
+    [Fact]
+    public void TestRotate_Valid()
+    {
+        Rectangle rect = new(1, 2, 3, 4);
+        rect.Width.Should().Be(1);
+        rect.Length.Should().Be(2);
+        
+        rect.Rotate();
+
+        rect.Length.Should().Be(1);
+        rect.Width.Should().Be(2);
+    }
+
+    [Theory]
+    [InlineData(1, 4, 2)]
+    [InlineData(2, 8, 4)]
+    [InlineData(1.32, 5.28, 2.64)]
+    [InlineData(-5, -20, -10)]
+    public void TestScale_Valid(double factor, double expectedWidth, double expectedLength)
+    {
+        Rectangle rect = new(4, 2, 0, 0);
+        rect.Scale(factor);
+
+        rect.Width.Should().Be(expectedWidth);
+        rect.Length.Should().Be(expectedLength);
     }
     
     [Fact]
-    public void CompareTo_Null() {
+    public void CompareTo_Null_ReturnsBigger() {
         Rectangle rect = new Rectangle();
         rect.CompareTo(null).Should().Be(1);
     }

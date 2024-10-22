@@ -1,0 +1,14 @@
+C:\Users\if230147\Desktop\A_Rectangle\Rectangle\Rectangle\bin\Debug\net8.0\Rectangle.exe
+C:\Users\if230147\Desktop\A_Rectangle\Rectangle\Rectangle\bin\Debug\net8.0\Rectangle.deps.json
+C:\Users\if230147\Desktop\A_Rectangle\Rectangle\Rectangle\bin\Debug\net8.0\Rectangle.runtimeconfig.json
+C:\Users\if230147\Desktop\A_Rectangle\Rectangle\Rectangle\bin\Debug\net8.0\Rectangle.dll
+C:\Users\if230147\Desktop\A_Rectangle\Rectangle\Rectangle\bin\Debug\net8.0\Rectangle.pdb
+C:\Users\if230147\Desktop\A_Rectangle\Rectangle\Rectangle\obj\Debug\net8.0\Rectangle.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\if230147\Desktop\A_Rectangle\Rectangle\Rectangle\obj\Debug\net8.0\Rectangle.AssemblyInfoInputs.cache
+C:\Users\if230147\Desktop\A_Rectangle\Rectangle\Rectangle\obj\Debug\net8.0\Rectangle.AssemblyInfo.cs
+C:\Users\if230147\Desktop\A_Rectangle\Rectangle\Rectangle\obj\Debug\net8.0\Rectangle.csproj.CoreCompileInputs.cache
+C:\Users\if230147\Desktop\A_Rectangle\Rectangle\Rectangle\obj\Debug\net8.0\Rectangle.dll
+C:\Users\if230147\Desktop\A_Rectangle\Rectangle\Rectangle\obj\Debug\net8.0\refint\Rectangle.dll
+C:\Users\if230147\Desktop\A_Rectangle\Rectangle\Rectangle\obj\Debug\net8.0\Rectangle.pdb
+C:\Users\if230147\Desktop\A_Rectangle\Rectangle\Rectangle\obj\Debug\net8.0\Rectangle.genruntimeconfig.cache
+C:\Users\if230147\Desktop\A_Rectangle\Rectangle\Rectangle\obj\Debug\net8.0\ref\Rectangle.dll

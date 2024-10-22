@@ -1,24 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\OneDrive\\Desktop\\HTL-Leonding-Year2\\POSEOO\\Uebungen\\A_Rectangle\\Rectangle\\Rectangle.Tests\\Rectangle.Tests.csproj": {}
+    "C:\\Users\\lukas_yfujc6v\\OneDrive\\Desktop\\HTL-Leonding-Year2\\POSEOO\\Uebungen\\A_Rectangle\\Rectangle\\Rectangle.Tests\\Rectangle.Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\OneDrive\\Desktop\\HTL-Leonding-Year2\\POSEOO\\Uebungen\\A_Rectangle\\Rectangle\\Rectangle.Tests\\Rectangle.Tests.csproj": {
+    "C:\\Users\\lukas_yfujc6v\\OneDrive\\Desktop\\HTL-Leonding-Year2\\POSEOO\\Uebungen\\A_Rectangle\\Rectangle\\Rectangle.Tests\\Rectangle.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\OneDrive\\Desktop\\HTL-Leonding-Year2\\POSEOO\\Uebungen\\A_Rectangle\\Rectangle\\Rectangle.Tests\\Rectangle.Tests.csproj",
+        "projectUniqueName": "C:\\Users\\lukas_yfujc6v\\OneDrive\\Desktop\\HTL-Leonding-Year2\\POSEOO\\Uebungen\\A_Rectangle\\Rectangle\\Rectangle.Tests\\Rectangle.Tests.csproj",
         "projectName": "Rectangle.Tests",
-        "projectPath": "C:\\Users\\User\\OneDrive\\Desktop\\HTL-Leonding-Year2\\POSEOO\\Uebungen\\A_Rectangle\\Rectangle\\Rectangle.Tests\\Rectangle.Tests.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\OneDrive\\Desktop\\HTL-Leonding-Year2\\POSEOO\\Uebungen\\A_Rectangle\\Rectangle\\Rectangle.Tests\\obj\\",
+        "projectPath": "C:\\Users\\lukas_yfujc6v\\OneDrive\\Desktop\\HTL-Leonding-Year2\\POSEOO\\Uebungen\\A_Rectangle\\Rectangle\\Rectangle.Tests\\Rectangle.Tests.csproj",
+        "packagesPath": "C:\\Users\\lukas_yfujc6v\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lukas_yfujc6v\\OneDrive\\Desktop\\HTL-Leonding-Year2\\POSEOO\\Uebungen\\A_Rectangle\\Rectangle\\Rectangle.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lukas_yfujc6v\\OneDrive\\Desktop\\HTL-Leonding-Year2\\POSEOO\\Uebungen\\A_Rectangle\\Rectangle\\NuGet.Config",
+          "C:\\Users\\lukas_yfujc6v\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,15 +27,15 @@
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "http://nrm.htl-leonding.ac.at:8081/repository/nuget-proxy/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\User\\OneDrive\\Desktop\\HTL-Leonding-Year2\\POSEOO\\Uebungen\\A_Rectangle\\Rectangle\\Rectangle\\Rectangle.csproj": {
-                "projectPath": "C:\\Users\\User\\OneDrive\\Desktop\\HTL-Leonding-Year2\\POSEOO\\Uebungen\\A_Rectangle\\Rectangle\\Rectangle\\Rectangle.csproj"
+              "C:\\Users\\lukas_yfujc6v\\OneDrive\\Desktop\\HTL-Leonding-Year2\\POSEOO\\Uebungen\\A_Rectangle\\Rectangle\\Rectangle\\Rectangle.csproj": {
+                "projectPath": "C:\\Users\\lukas_yfujc6v\\OneDrive\\Desktop\\HTL-Leonding-Year2\\POSEOO\\Uebungen\\A_Rectangle\\Rectangle\\Rectangle\\Rectangle.csproj"
               }
             }
           }
@@ -43,6 +44,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "false",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -88,24 +94,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\User\\OneDrive\\Desktop\\HTL-Leonding-Year2\\POSEOO\\Uebungen\\A_Rectangle\\Rectangle\\Rectangle\\Rectangle.csproj": {
+    "C:\\Users\\lukas_yfujc6v\\OneDrive\\Desktop\\HTL-Leonding-Year2\\POSEOO\\Uebungen\\A_Rectangle\\Rectangle\\Rectangle\\Rectangle.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\OneDrive\\Desktop\\HTL-Leonding-Year2\\POSEOO\\Uebungen\\A_Rectangle\\Rectangle\\Rectangle\\Rectangle.csproj",
+        "projectUniqueName": "C:\\Users\\lukas_yfujc6v\\OneDrive\\Desktop\\HTL-Leonding-Year2\\POSEOO\\Uebungen\\A_Rectangle\\Rectangle\\Rectangle\\Rectangle.csproj",
         "projectName": "Rectangle",
-        "projectPath": "C:\\Users\\User\\OneDrive\\Desktop\\HTL-Leonding-Year2\\POSEOO\\Uebungen\\A_Rectangle\\Rectangle\\Rectangle\\Rectangle.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\OneDrive\\Desktop\\HTL-Leonding-Year2\\POSEOO\\Uebungen\\A_Rectangle\\Rectangle\\Rectangle\\obj\\",
+        "projectPath": "C:\\Users\\lukas_yfujc6v\\OneDrive\\Desktop\\HTL-Leonding-Year2\\POSEOO\\Uebungen\\A_Rectangle\\Rectangle\\Rectangle\\Rectangle.csproj",
+        "packagesPath": "C:\\Users\\lukas_yfujc6v\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lukas_yfujc6v\\OneDrive\\Desktop\\HTL-Leonding-Year2\\POSEOO\\Uebungen\\A_Rectangle\\Rectangle\\Rectangle\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lukas_yfujc6v\\OneDrive\\Desktop\\HTL-Leonding-Year2\\POSEOO\\Uebungen\\A_Rectangle\\Rectangle\\NuGet.Config",
+          "C:\\Users\\lukas_yfujc6v\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -113,9 +120,8 @@
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "http://nrm.htl-leonding.ac.at:8081/repository/nuget-proxy/index.json": {}
         },
         "frameworks": {
           "net8.0": {
@@ -127,6 +133,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "false",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -148,7 +159,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
