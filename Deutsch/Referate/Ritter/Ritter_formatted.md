@@ -138,7 +138,7 @@ Die Tischplatte wird von den **"Schragen"** gehoben.
 ## Die Schlacht
 
 Gekämpft wurde für den **Landesherren**.  
-Als Gegenleistung für das **Lehen**, das der Ritter von ihm bekommen hatte.
+Als Gegenleistung für das [Lehen](#lehen), das der Ritter von ihm bekommen hatte.
 
 ## Turniere
 
@@ -148,7 +148,12 @@ Als Gegenleistung für das **Lehen**, das der Ritter von ihm bekommen hatte.
 ## Ritterschlag
 
 - **Zeremonie**, die einen Knappe zum Ritter macht.
-- "Der letzte Schlag, den er ohne sich zu verteidigen einsteckt."
+- "Der letzte Schalg, gegen den sich der Ritter nicht verteidigt"
+
+### Symbolik
+- **Einwilligung**: Der Ritter akzeptiert diesen Schlag freiwillig und sieht ihn als Teil des Rituals, was bedeutet, dass er sich nicht wehrt.
+- **Symbol für Hingabe**: Der Ritterschlag steht für die vollständige Hingabe und Verpflichtung zu den Werten des Rittertums, was die Idee des "Nicht-Vertheidigens" verstärkt.
+- **Übergangsritual**: Er markiert den Übergang von einem gewöhnlichen Mann zu einem Ritter, was den Abschluss einer Phase im Leben des Individuums symbolisiert.
 
 ### Schwertleite
 
