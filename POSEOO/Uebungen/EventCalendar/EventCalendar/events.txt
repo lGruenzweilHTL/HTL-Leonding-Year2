@@ -1,0 +1,6 @@
+EventName; InitialDate; MaxParticipants; InvitorLastName; InvitorFirstName; Participants
+Event1; 2023-10-01; 5; Smith; John; Doe Jane, Doe Jack
+Event2; 2023-10-02; 4; Doe; Jane; Smith John, Brown Jill
+Event3; 2023-10-03; 3; Doe; Jack;
+Event4; 2023-10-04; 2; Smith; John; Doe Jane, White Gillian
+Event5; 2023-10-05; 1; Doe; Jane;

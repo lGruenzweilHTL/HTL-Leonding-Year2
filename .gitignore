@@ -1,5 +1,15 @@
 # Zip folders (only needed locally for submissions)
 *.zip
 
-## JetBrains .idea folder
+# JetBrains .idea folder
 .idea
+
+# Visual Studio cache folder
+.vs
+
+# VSCode cache folder
+.vscode
+
+# C# build folders
+bin
+obj

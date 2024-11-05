@@ -1,0 +1,6 @@
+FirstName; LastName; Email; Phone
+John; Doe;
+Jane; Doe; jane@doe.com
+Mary; Smith; mary@smith.com; 123456789
+Jill; Brown; ; 987654321
+Gillian; White; gw@white.com; 123456789
