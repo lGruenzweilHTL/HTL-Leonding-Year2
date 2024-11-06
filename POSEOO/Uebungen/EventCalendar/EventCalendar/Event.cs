@@ -72,7 +72,7 @@ namespace EventCalendar
         
         public override string ToString()
         {
-            string people = string.Join(", ", _people);
+            string people = string.Join<Person>(", ", GetSortedParticipants());
             return $"{Title}, {Date:dd.MM.yyyy hh.mm}, {Invitor}: {people}";
         }
         
@@ -107,7 +107,6 @@ namespace EventCalendar
                 
                 Event ev = new Event(title, date, invitor, maxParticipants);
                 
-                
                 // Handle participants
                 string[] participants = parts[5].Split(", ");
                 bool participantsValid = true;
@@ -117,6 +116,7 @@ namespace EventCalendar
                     string[] names = participants[j].Split(' ');
                     
                     participantsValid &= TryGetPerson(names[1], names[0], persons, out var p);
+                    if (!participantsValid) break;
                     participantsValid &= ev.AddPerson(p);
                 }
                 
