@@ -48,39 +48,60 @@ public class EventTests
     }
 
     [Fact]
-    public void Import_GivenValidCsv_ShouldSucceed()
+    public void Import_PartlyValid_ReturnsValid()
     {
-        string[] csv = File.ReadAllLines("ValidEvents.csv")[1..];
-        Person[] people = Person.Import(File.ReadAllLines("ValidPeople.csv")[1..]);
-
-        Event[] result = Event.Import(csv, people);
+        string[] csv = [
+            "Event1; 2023-10-01; 5; Smith; John; Doe Jack, Doe Jane",
+            "Event2; 2023-10-02; 5; Doe; Jane; Brown Jill, Smith John",
+            "Event3; 2023-10-03; 5; Doe; Jack; Brown Jill, Smith John",
+            "Event4; 2023-10-04; 5; Doe; Jane; Brown Jill, Smith John",
+            "Event5; 2023-10-05; 5; Doe; Jack; Brown Jill, Smith John"
+        ];
+        Person[] people = [
+            new Person("John", "Smith"),
+            new Person("Jane", "Doe"),
+            new Person("Jack", "Doe"),
+            new Person("Jill", "Brown"),
+        ];
+        Event[] expected = [
+            new Event("Event1", new DateTime(2023, 10, 1), people[0], 5),
+            new Event("Event2", new DateTime(2023, 10, 2), people[1], 5),
+            new Event("Event3", new DateTime(2023, 10, 3), people[2], 5),
+            new Event("Event4", new DateTime(2023, 10, 4), people[1], 5),
+            new Event("Event5", new DateTime(2023, 10, 5), people[2], 5)
+        ];
+        Event[] events = Event.Import(csv, people);
         
-        Assert.Equal(5, result.Length);
+        Assert.Equal(expected.Length, events.Length);
+        for (var i = 0; i < events.Length; i++)
+        {
+            Assert.Equal(expected[i].Title, events[i].Title);
+            Assert.Equal(expected[i].Date, events[i].Date);
+            Assert.Equal(expected[i].Invitor, events[i].Invitor);
+            Assert.Equal(expected[i].MaxParticipants, events[i].MaxParticipants);
+            Assert.Equal(2, events[i].GetSortedParticipants().Length);
+        }
+    }
+    
+    [Fact]
+    public void Import_AllInvalid_ReturnsEmpty()
+    {
+        string[] csv = [
+            "Event1; 2023-10-01; 1; Smith; John; Doe Jack, Doe Jane", // Invalid by Max Participants
+            "", // Everything missing
+            "Event3; 2023-10-03; 5", // No invitor
+            "Event4;", // Only title
+            "Event5; 2023-10-05; 5; Doe; Jack; Brown John, Smith Jill" // Invalid participants
+        ];
+        Person[] people = [
+            new Person("John", "Smith"),
+            new Person("Jane", "Doe"),
+            new Person("Jack", "Doe"),
+            new Person("Jill", "Brown"),
+        ];
+        Event[] events = Event.Import(csv, people);
         
-        Assert.Equal("Event2", result[0].Title);
-        Assert.Equal(5, result[0].MaxParticipants);
-        Assert.Equal(new DateTime(2023, 10, 1), result[0].Date);
-        Assert.Equal("John", result[0].Invitor.FirstName);
-        Assert.Equal("Smith", result[0].Invitor.LastName);
-
-        var participants = result[0].GetSortedParticipants();
-        Assert.Equal("Jack", participants[0].FirstName);
-        Assert.Equal("Doe", participants[0].LastName);
-        Assert.Equal("Jane", participants[1].FirstName);
-        Assert.Equal("Doe", participants[1].LastName);
-        
-        
-        Assert.Equal("Event2", result[1].Title);
-        Assert.Equal(4, result[1].MaxParticipants);
-        Assert.Equal(new DateTime(2023, 10, 2), result[1].Date);
-        Assert.Equal("Jane", result[1].Invitor.FirstName);
-        Assert.Equal("Doe", result[1].Invitor.LastName);
-
-        var participants2 = result[1].GetSortedParticipants();
-        Assert.Equal("Jill", participants2[0].FirstName);
-        Assert.Equal("Brown", participants2[0].LastName);
-        Assert.Equal("John", participants2[1].FirstName);
-        Assert.Equal("Smith", participants2[1].LastName);
+        Assert.Empty(events);
     }
 
     [Fact]
@@ -156,5 +177,70 @@ public class EventTests
         success &= ev6.AddPerson(p);
         
         Assert.False(success);
+    }
+
+    [Fact]
+    public void RemovePerson_Valid_ShouldSucceed()
+    {
+        Person invitor = new Person("First", "Last");
+        Event ev = new Event("Event 1", DateTime.Now, invitor, 2);
+        Person p = new Person("First", "Last");
+
+        bool success = true;
+        
+        success &= ev.AddPerson(p);
+        success &= ev.RemovePerson(p);
+        
+        Assert.True(success);
+    }
+    
+    [Fact]
+    public void RemovePerson_NotAdded_ShouldFail()
+    {
+        Person invitor = new Person("First", "Last");
+        Event ev = new Event("Event 1", DateTime.Now, invitor, 2);
+        Person p = new Person("First", "Last");
+
+        bool success = ev.RemovePerson(p);
+        
+        Assert.False(success);
+    }
+    
+    [Fact]
+    public void GetSortedParticipants_Valid_ShouldReturnSorted()
+    {
+        Person invitor = new Person("First", "Last");
+        Event ev = new Event("Event 1", DateTime.Now, invitor, 10);
+        Person p1 = new Person("First", "CCC");
+        Person p2 = new Person("First2", "BBB");
+        Person p3 = new Person("First3", "AAA");
+
+        ev.AddPerson(p2);
+        ev.AddPerson(p1);
+        ev.AddPerson(p3);
+        
+        Person[] sorted = ev.GetSortedParticipants();
+        
+        Assert.Equal(p3, sorted[0]);
+        Assert.Equal(p2, sorted[1]);
+        Assert.Equal(p1, sorted[2]);
+    }
+    
+    [Fact]
+    public void ToString_Valid_ShouldReturnString()
+    {
+        Person invitor = new Person("First", "Last");
+        Event ev = new Event("Event 1", new DateTime(1,1,1), invitor, 10);
+        Person p1 = new Person("First", "CCC");
+        Person p2 = new Person("First2", "BBB");
+        Person p3 = new Person("First3", "AAA");
+
+        ev.AddPerson(p2);
+        ev.AddPerson(p1);
+        ev.AddPerson(p3);
+        
+        string expected = "Event 1, 01.01.0001 12.00, Last First: AAA First3, BBB First2, CCC First";
+        
+        Assert.Equal(expected, ev.ToString());
     }
 }
