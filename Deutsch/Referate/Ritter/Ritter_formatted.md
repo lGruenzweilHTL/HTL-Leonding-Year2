@@ -56,7 +56,7 @@ Die **Vollendung** erfolgt in der Schlacht.
 #### Sporen
 
 - Wichtiges **Hilfsmittel**.
-- Keine genaueren **Infos**.
+- Keine genaueren **Infos** im Video.
 - **Befestigt am Fuß**.
 
 #### Panzerhemd
@@ -148,7 +148,7 @@ Als Gegenleistung für das [Lehen](#lehen), das der Ritter von ihm bekommen hatt
 ## Ritterschlag
 
 - **Zeremonie**, die einen Knappe zum Ritter macht.
-- "Der letzte Schalg, gegen den sich der Ritter nicht verteidigt"
+- "Der letzte Schlag, gegen den sich der Ritter nicht verteidigt"
 
 ### Symbolik
 - **Einwilligung**: Der Ritter akzeptiert diesen Schlag freiwillig und sieht ihn als Teil des Rituals, was bedeutet, dass er sich nicht wehrt.
