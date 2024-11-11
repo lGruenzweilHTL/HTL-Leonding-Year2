@@ -54,7 +54,7 @@ namespace EventCalendar
 
             for (var i = 0; i < personCsv.Length; i++)
             {
-                string[] personData = personCsv[i].Split("; ");
+                string[] personData = personCsv[i].Replace(" ", "").Split(";");
 
                 // Phone number and email can be missing. Maximum 4 entries
                 if (personData.Length is < 2 or > 4) continue;

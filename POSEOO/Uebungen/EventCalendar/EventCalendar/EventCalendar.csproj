@@ -6,4 +6,13 @@
     <LangVersion>latestmajor</LangVersion>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Update="events.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="persons.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
