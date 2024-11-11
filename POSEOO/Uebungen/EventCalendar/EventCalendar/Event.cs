@@ -95,7 +95,7 @@ namespace EventCalendar
 
             for (var i = 0; i < csv.Length; i++)
             {
-                string[] parts = csv[i].Split("; ");
+                string[] parts = csv[i].Replace("; ", ";").Split(';');
                 
                 if (parts.Length != 6) continue;
 
@@ -109,6 +109,7 @@ namespace EventCalendar
                 
                 // Handle participants
                 string[] participants = parts[5].Split(", ");
+                if (participants.Length == 1 && participants[0] == "") goto Success;
                 bool participantsValid = true;
                 
                 for (var j = 0; j < participants.Length; j++)
@@ -121,7 +122,7 @@ namespace EventCalendar
                 }
                 
                 if (!participantsValid) continue;
-
+                Success:
                 result[valid++] = ev;
             }
 
