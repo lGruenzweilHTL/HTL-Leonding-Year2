@@ -46,3 +46,36 @@ Broadcast: 7.255.255.255
 3B -> Fortlaufende Sequenz
 
 No MAC-Address can be ambiguous
+
+# IPv4-Address
+
+| IPv4-Address | Net-ID | Host ID |
+| ------------ | ------ | ------- |
+| IP-Adr decimal | 192.168.10. | 1 |
+| IP-Adr binary | 11000000.10101000.0001010. | 00000001 |
+| Subnetmask d. | 255.255.255. | 0 |
+| Subnetmask binary | 11111111.11111111.11111111. | 00000000 |
+
+## Bsp 1
+IP-Adr: 120.96.1.200
+Subnetmask: 255.0.0.0
+Net ID: 120
+Host ID: 96.1.200
+Net-Adr: 120.0.0.0
+Broadcast Adr: 120.255.255.255
+
+## Bsp 2
+172.96.1.200
+255.255.0.0
+172.96
+1.200
+172.96.0.0
+120.96.255.255
+
+## Bsp 3
+192.96.1.200
+255.255.255.0
+193.96.1
+200
+193.96.1.0
+193.96.1.255
