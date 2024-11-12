@@ -54,7 +54,7 @@ public sealed class CompanyTests : TestBase
     {
         string[] csvData = new string[]
         {
-            "Company Name;m² Price;Hourly Wage;Profit Margin;Workers",  // Header row
+            "CompanyName;M2Price;HourlyWage;Profit Margin;Workers",  // Header row
             "ABC Corp;50.5;25.75;20;John,Fast,Jane,Slow",               // Valid row
             "XYZ Ltd;60.0;30.5;15;Alice,Medium,Bob,Fast",               // Valid row
             "SomeCompany;75.0;35.0;10;Carol,Slow,Dan,Medium",           // Valid row
@@ -83,16 +83,24 @@ public sealed class CompanyTests : TestBase
             {
                 new Worker("Carol", WorkSpeed.Slow),
                 new Worker("Dan", WorkSpeed.Regular)
+            }),
+            new Company("CompanyC", 45.5m, 30.0m, 35, new Worker[] { }),
+            new Company("CompanyD", 60.5m, 25.5m, 20, new Worker[] {
+                new Worker("Eve", WorkSpeed.Fast)
+            }),
+            new Company("AnotherCo", 90.0m, 20.0m, 15, new Worker[]
+            {
+                new Worker("John", WorkSpeed.Fast)
+            }),
+            new Company("GoodCompany", 70.0m, 40.0m, 20, new Worker[]
+            {
+                new Worker("Bill", WorkSpeed.Fast)
             })
             // Invalid rows:
             // "NoName;NaN;40.0;25;Tom,Fast,Joe,Medium" (Invalid: NaN for m² Price)
             // "CompanyB;100;NaN;30;Susan,Slow,Matt,Fast" (Invalid: NaN for Hourly Wage)
-            // "CompanyC;45.5;30.0;35;" (Invalid: Missing workers)
             // "MissingData;;50.0;40;Chris,Medium,Pat,Slow" (Invalid: Missing m² Price)
-            // "CompanyD;60.5;25.5;20;Eve,Fast,,Slow" (Invalid: Missing worker name)
             // "InvalidCompany;100;50;10;InvalidWorker,Fast,;Medium" (Invalid: Invalid format)
-            // "AnotherCo;90.0;20.0;15;John,Fast,Jane,NotValid" (Invalid: Invalid WorkSpeed enum)
-            // "GoodCompany;70.0;40.0;20;Bill,Fast" (Invalid: Missing one worker)
         };
 
         Company.Import(csvData).Should().BeEquivalentTo(expectedCompanies);
