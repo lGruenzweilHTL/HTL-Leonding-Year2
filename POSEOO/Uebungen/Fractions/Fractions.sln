@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FractionCalculator", "FractionCalculator\FractionCalculator.csproj", "{EB765857-1D8F-4FF1-AA2E-5E8C6EC116D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FractionCalculatorTests", "FractionCalculatorTests\FractionCalculatorTests.csproj", "{FAACB07F-2089-4092-BD7B-0C01A1CB8CB3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EB765857-1D8F-4FF1-AA2E-5E8C6EC116D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB765857-1D8F-4FF1-AA2E-5E8C6EC116D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB765857-1D8F-4FF1-AA2E-5E8C6EC116D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB765857-1D8F-4FF1-AA2E-5E8C6EC116D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAACB07F-2089-4092-BD7B-0C01A1CB8CB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAACB07F-2089-4092-BD7B-0C01A1CB8CB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAACB07F-2089-4092-BD7B-0C01A1CB8CB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAACB07F-2089-4092-BD7B-0C01A1CB8CB3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

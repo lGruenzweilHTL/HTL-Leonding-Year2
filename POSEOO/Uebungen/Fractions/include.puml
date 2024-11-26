@@ -1,0 +1,40 @@
+@startuml
+class Fraction {
+    - _numerator : int = 1
+    - _denominator : int = 1
+    + Numerator : int <<get>> <<set>>
+    + Denominator : int <<get>> <<set>>
+    + GetValue() : double
+    + ConvertToString() : string
+    + Normalize() : void
+    + IsEqual(other:Fraction) : bool
+    + {static} Gcd(a:int, b:int) : int
+}
+class Calculator {
+    - _leftOperand : Fraction
+    - _rightOperand : Fraction
+    + LeftOperand : Fraction <<get>> <<set>>
+    + RightOperand : Fraction <<get>> <<set>>
+    + Add() : Fraction
+    + Sub() : Fraction
+    + Mul() : Fraction
+    + Div() : Fraction
+}
+Calculator --o Fraction
+CalculatorTest --> Calculator : tests
+FractionTest --> Fraction : tests
+
+class FractionTest {
+    + T01_CreateFractionTest() : void
+    + T02_GetValue() : void
+    + T03_NormalizeTest() : void
+    + T04_IsEqualTest() : void
+    + T05_ConvertToStringTest() : void
+}
+class CalculatorTest {
+    + T10_AddTest() : void
+    + T11_SubTest() : void
+    + T12_MultTest() : void
+    + T13_DivTest() : void
+}
+@enduml
