@@ -1,3 +1,35 @@
+# Services
+### DHCP
+**D**ynamic **H**ost **C**onfiguration **P**rotocol.
+
+Verteilt IP-Adressen, Subnetmask und Default-Gateway. **DHCP verteilt DNS-Server**
+
+### DNS
+**D**omain **N**ame **S**ystem
+
+### Webserver
+`index.html` als Erstzugriff.
+
+### HTTP
+**H**yper**text** **T**ransfer **P**rotocol
+
+### SMPT
+Senden von Mails.
+
+### IMAP
+Abrufen von Mails.
+Mails werden vom Server **gespiegelt**.
+
+### POP3
+Abrufen von Mails.
+Mails werden vom Server **heruntergeladen** (danach nicht mehr am server).
+
+### FPT
+**F**ile **T**ransfer **P**rotocol.
+
+### ICMP
+**I**nternet **C**ontrol **M**essage **P**rotocol
+
 # IPs
 
 IP:         7  |.0.0.?
@@ -9,7 +41,7 @@ Broadcast: 7.255.255.255
 
 # ISO-OSI Addressing
 
-| ISO-OSI Layer | TCP/IP Layer | Addressing | Kopplungsgeräte | PDU (Protocol Data Unit) | Protokolle |
+| ISO-OSI Layer | TCP/IP Layer | Addressing | Kopplungsgeräte | **PDU** (Protocol Data Unit) | Protokolle |
 | ------------- | ------------ | ---------- | ---------------- | ----------------------- | ---------- |
 | 7 Application | Application  |            |                  | Daten                   | HTTPS(s), DHCP, DNS, FTP, POP3, IMAP, SMTP |
 | 6 Presentation | Application |            |                  | Daten                   |            |
@@ -21,14 +53,21 @@ Broadcast: 7.255.255.255
 **P**lease **d**o **n**ot **t**hrow **S**alami **P**izza **a**way.
 
 ## MAC-Address
+**M**edia **A**cess **C**ontrol.
+
 6 bytes
 
 3B -> Herstellerspezifisch
+
 3B -> Fortlaufende Sequenz
 
 No MAC-Address can be ambiguous
 
 # IPv4-Address
+
+**I**nternet **P**rotocol
+
+4 bytes
 
 | IPv4-Address | Net-ID | Host ID |
 | ------------ | ------ | ------- |
@@ -38,10 +77,30 @@ No MAC-Address can be ambiguous
 | Subnetmask binary | 11111111.11111111.11111111. | 00000000 |
 
 ## Beispiele
-
 | Example | IP Address    | Subnet Mask   | Net ID  | Host ID  | Net Address   | Broadcast Address   |
 |---------|---------------|---------------|---------|----------|---------------|---------------------|
 | Bsp 1   | 120.96.1.200  | 255.0.0.0     | 120     | 96.1.200 | 120.0.0.0     | 120.255.255.255     |
 | Bsp 2   | 172.96.1.200  | 255.255.0.0   | 172.96  | 1.200    | 172.96.0.0    | 120.96.255.255      |
 | Bsp 3   | 192.96.1.200  | 255.255.255.0 | 193.96.1| 200      | 193.96.1.0    | 193.96.1.255        |
 | Bsp 4   | 192.168.10.1 and 192.168.1.3 | 255.255.0.0 | 192.168 | 10.1 bzw. 1.3 | 192.168.0.0 | 192.168.255.255 |
+
+## CIDR Notation
+Number of bits in Net ID.
+
+Written like: A.B.C.D/n
+
+Example: 192.168.0.0/**16** (CIDR Notation, possible CIDR numbers: **8, 16, 24**)
+
+Min-IP Adr.: 192.168.0.1 (192.168.0.0 is reserved for Net Adr.)
+Max-IP Ar.: 192.168.255.254 (192.168.255.255 is reserved for Broadcast Adr.)
+
+# IPv6
+128 bits (16 bytes)
+
+Existiert nur, weil IPv4 der Adressraum ausging.
+
+# Radnom shit von der tafel
+![](Tafelbild.jpeg)
+
+## FCS
+**F**rame **C**heck **S**equence
