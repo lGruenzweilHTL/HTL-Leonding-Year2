@@ -89,7 +89,7 @@ Number of bits in Net ID.
 
 Written like: A.B.C.D/n
 
-Example: 192.168.0.0/**16** (CIDR Notation, possible CIDR numbers: **8, 16, 24**)
+Example: 192.168.0.0/**16** (possible CIDR numbers: **8, 16, 24**)
 
 Min-IP Adr.: 192.168.0.1 (192.168.0.0 is reserved for Net Adr.)
 Max-IP Ar.: 192.168.255.254 (192.168.255.255 is reserved for Broadcast Adr.)
@@ -99,7 +99,7 @@ Max-IP Ar.: 192.168.255.254 (192.168.255.255 is reserved for Broadcast Adr.)
 
 Existiert nur, weil IPv4 der Adressraum ausging.
 
-# Radnom shit von der tafel
+# Data Encapsulation
 ![](Tafelbild.jpeg)
 
 ## FCS
