@@ -11,7 +11,7 @@ Verteilt IP-Adressen, Subnetmask und Default-Gateway. **DHCP verteilt DNS-Server
 `index.html` als Erstzugriff.
 
 ### HTTP
-**H**yper**text** **T**ransfer **P**rotocol
+**H**yper**t**ext **T**ransfer **P**rotocol
 
 ### SMPT
 Senden von Mails.
@@ -24,7 +24,7 @@ Mails werden vom Server **gespiegelt**.
 Abrufen von Mails.
 Mails werden vom Server **heruntergeladen** (danach nicht mehr am server).
 
-### FPT
+### FTP
 **F**ile **T**ransfer **P**rotocol.
 
 ### ICMP
@@ -34,7 +34,6 @@ Mails werden vom Server **heruntergeladen** (danach nicht mehr am server).
 
 IP:         7  |.0.0.?
 Subnetmask: 255|.0.0.0
----------NetID | HostID
 
 Router: 7.0.0.254
 Broadcast: 7.255.255.255
@@ -43,7 +42,7 @@ Broadcast: 7.255.255.255
 
 | ISO-OSI Layer | TCP/IP Layer | Addressing | Kopplungsgeräte | **PDU** (Protocol Data Unit) | Protokolle |
 | ------------- | ------------ | ---------- | ---------------- | ----------------------- | ---------- |
-| 7 Application | Application  |            |                  | Daten                   | HTTPS(s), DHCP, DNS, FTP, POP3, IMAP, SMTP |
+| 7 Application | Application  |            |                  | Daten                   | HTTP(S), DHCP, DNS, FTP, POP3, IMAP, SMTP |
 | 6 Presentation | Application |            |                  | Daten                   |            |
 | 5 Session      | Application |            |                  | Daten                   |            |
 | 4 Transport    | Transport   | Port A. (2 bytes) |           | Segment                 | TCP, UDP   |
@@ -53,13 +52,13 @@ Broadcast: 7.255.255.255
 **P**lease **d**o **n**ot **t**hrow **S**alami **P**izza **a**way.
 
 ## MAC-Address
-**M**edia **A**cess **C**ontrol.
+MAC = **M**edia **A**cess **C**ontrol.
 
-6 bytes
+6 bytes lang
 
 3B -> Herstellerspezifisch
 
-3B -> Fortlaufende Sequenz
+3B -> Vom Hersteller vergebene, einzigartige Sequenz
 
 No MAC-Address can be ambiguous
 
@@ -77,12 +76,12 @@ No MAC-Address can be ambiguous
 | Subnetmask binary | 11111111.11111111.11111111. | 00000000 |
 
 ## Beispiele
-| Example | IP Address    | Subnet Mask   | Net ID  | Host ID  | Net Address   | Broadcast Address   |
+| Example | IP Address (CIDR) | Subnet Mask | Net ID | Host ID | Net Address   | Broadcast Address   |
 |---------|---------------|---------------|---------|----------|---------------|---------------------|
-| Bsp 1   | 120.96.1.200  | 255.0.0.0     | 120     | 96.1.200 | 120.0.0.0     | 120.255.255.255     |
-| Bsp 2   | 172.96.1.200  | 255.255.0.0   | 172.96  | 1.200    | 172.96.0.0    | 120.96.255.255      |
-| Bsp 3   | 192.96.1.200  | 255.255.255.0 | 193.96.1| 200      | 193.96.1.0    | 193.96.1.255        |
-| Bsp 4   | 192.168.10.1 and 192.168.1.3 | 255.255.0.0 | 192.168 | 10.1 bzw. 1.3 | 192.168.0.0 | 192.168.255.255 |
+| Bsp 1   | 120.96.1.200/8 | 255.0.0.0    | 120     | 96.1.200 | 120.0.0.0     | 120.255.255.255     |
+| Bsp 2   | 172.96.1.200/16 | 255.255.0.0 | 172.96  | 1.200    | 172.96.0.0    | 120.96.255.255      |
+| Bsp 3   | 192.96.1.200/24 | 255.255.255.0 | 193.96.1 | 200   | 193.96.1.0    | 193.96.1.255        |
+| Bsp 4   | 192.168.10.1/16 and 192.168.1.3/16 | 255.255.0.0 | 192.168 | 10.1 bzw. 1.3 | 192.168.0.0 | 192.168.255.255 |
 
 ## CIDR Notation
 Number of bits in Net ID.
