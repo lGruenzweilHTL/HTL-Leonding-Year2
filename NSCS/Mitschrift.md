@@ -14,13 +14,16 @@ Verteilt IP-Adressen, Subnetmask und Default-Gateway. **DHCP verteilt DNS-Server
 **H**yper**t**ext **T**ransfer **P**rotocol
 
 ### SMPT
+Simple Mail Transfer Protocol
 Senden von Mails.
 
 ### IMAP
+
 Abrufen von Mails.
 Mails werden vom Server **gespiegelt**.
 
 ### POP3
+Post Office Protocol v3.
 Abrufen von Mails.
 Mails werden vom Server **heruntergeladen** (danach nicht mehr am server).
 
@@ -28,7 +31,15 @@ Mails werden vom Server **heruntergeladen** (danach nicht mehr am server).
 **F**ile **T**ransfer **P**rotocol.
 
 ### ICMP
+Internet Message Access Protocol.
 **I**nternet **C**ontrol **M**essage **P**rotocol
+
+## UDP
+User Datagram Protocol.
+
+## ARP
+Address resolution Protocol.
+Useful when needing the MAC-Adress from a known IP-Adress.
 
 # IPs
 
