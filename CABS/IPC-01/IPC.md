@@ -66,8 +66,5 @@ void leave_region() {
 
 **c) Can Busy Waiting be avoided? If so, how?**
 
-Busy waiting can easily be avoided by surrendering your cpu time while the condition is false.
-The condition will be checked once, then the process will voluntarily lose computing time to let the cpu work on other things.
-This will be repeated until the critical region is unlocked and the process can resume execution.
-
-In C#, this can be done using `Task.Yield()` in the `System.Threading.Tasks` namespace.
+Busy waiting can easily be avoided by surrendering your cpu time while we need to wait
+This can be done using `sleep()` and `wakeup()`
