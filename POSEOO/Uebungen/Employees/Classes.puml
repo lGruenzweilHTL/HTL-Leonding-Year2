@@ -1,0 +1,42 @@
+﻿@startuml
+
+abstract class Employee {
+    +Department: string
+    +Gender: Gender
+    +Salary: decimal [abstract] {get;}
+    +ToString(): string [override]
+}
+enum Gender {
+    Male, Female, Divers
+}
+
+class Worker {
+    +MaxMonthlyWorkHours: int [const]
+    +Hours: double {get;set;}
+    +HourlyWage: decimal {get;set;}
+    +Salary: decimal [override] {get;}    
+    +Worker(string, Gender, string)
+    +Worker(string, Gender, string, double, decimal)    
+    +ToString(): string [override]   
+    -_hourlyWage: decimal
+    -_hours: double
+}
+
+class OfficeEmployee {
+    +Salary: decimal [override] {get;}    
+    +OfficeEmployee(string, Gender, string, decimal)
+    +ToString(): string [override]
+}
+
+class Manager {
+    +Salary: decimal [override] {get;}    
+    +Manager(string, Gender, string, decimal)
+    +ToString(): string [override]
+}
+
+Employee <|-- OfficeEmployee
+Employee <|-- Worker
+OfficeEmployee <|-- Manager
+Employee -> Gender
+
+@enduml
