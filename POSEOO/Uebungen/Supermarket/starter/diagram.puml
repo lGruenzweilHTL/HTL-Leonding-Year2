@@ -1,0 +1,76 @@
+﻿@startuml
+namespace Supermarket {
+    class Product {
+        + const char Separator
+        + const string Invalid
+        + string ProductName
+        + string Barcode
+        + int Quantity
+        # virtual string[] CsvColumnNames
+        # virtual string[] CsvColumnValues
+        + Product(string productName, string barcode, int quantity)
+        + string GetCsvHeader()
+        + string ToCsv()
+        # static string ToCsvLine(string[] values, char separator)
+        + static bool IsBarcodeValid(string? barcode)
+        + static T[] AppendToArray<T>(T[] existingArray, params T[] newValues)
+    }
+
+    class Food {
+        - const char AllergenSeparator
+        - readonly SortedSet<AllergenType> _allergens
+        + Food(string productName, string barcode, int quantity, params AllergenType[] allergens)
+        + AllergenType[] Allergens
+        # override string[] CsvColumnNames
+        # override string[] CsvColumnValues
+        + bool AddAllergen(AllergenType allergen)
+        + bool RemoveAllergen(AllergenType allergen)
+        + bool ContainsAnyAllergen(params AllergenType[] allergens)
+    }
+
+    class NonFood {
+        - readonly List<Review> _reviews
+        + NonFood(string productName, string barcode, int quantity)
+        + Review[] Reviews
+        + double? AverageRating
+        # override string[] CsvColumnNames
+        # override string[] CsvColumnValues
+        + void AddReview(Review review)
+    }
+    
+    class Review {
+        + DateTime Timestamp
+        + Rating Rating
+        + string Comment
+    }
+    enum Rating {
+       OneStar = 1
+       TwoStars = 2
+       ThreeStars = 3
+       FourStars = 4
+       FiveStars = 5
+    }
+    enum AllergenType {
+        A
+        B
+        C
+        D
+        E
+        F
+        G
+        H
+        L
+        M
+        N
+        O
+        P
+        R
+   }
+
+    Product <|-- Food
+    Product <|-- NonFood
+    Food o- AllergenType  
+    NonFood o-- Review
+    Review o- Rating
+}
+@enduml
