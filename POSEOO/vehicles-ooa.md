@@ -1,29 +1,68 @@
 # Vehicles OOA
+POSE2
+Prof. DI P. Frey
+HTBLA Leonding
+
+## Introduction
+This document provides an object-oriented analysis (OOA) of the domain of vehicles, focusing on various types of vehicles, their energy sources, and driving conditions. The analysis identifies the key entities, their properties, and interactions within the domain.
+
+## Overview
+The domain consists of various types of vehicles designed for either passenger transport or material transport. These vehicles differ in their propulsion methods, fuel requirements, and capabilities. Additionally, a separate system handles refueling and recharging to ensure that each vehicle type receives the appropriate energy source.
 
 ## The Things
 
-- Passenger Transport Vehicles
+### Passenger Transport Vehicles
+Vehicles primarily designed to transport people. Examples include:
+- **Cars**
+    - **Fuel Cars**: Personal and commercial passenger transport, typically powered by gasoline.
+    - **Electric Cars**: Battery-powered passenger vehicles.
+- **Bicycles**: Human-powered transport, which does not require external fuel.
 
-    - Cars
-        - Fuel Cars
-        - Electric Cars
+### Material Transport Vehicles
+Vehicles designed for moving goods and cargo. Examples include:
+- **Trucks**
+    - **Fuel Trucks**: Heavy-duty transport vehicles powered by gasoline.
+    - **Electric Trucks**: Battery-powered trucks designed for cargo transport.
 
-    - Bicycles
+### Energy Sources
+Vehicles require different sources of energy:
+- **Fuel Station**: For gasoline and diesel vehicles.
+- **Electric Charging Station**: For electric vehicles.
 
-- Material Transport Vehicles
+### Driving Conditions/Roads
+Vehicles travel under different conditions that affect their performance:
+- **City Roads**: Frequent stops, lower speeds, and higher energy consumption.
+- **Highways**: Higher speeds with relatively lower energy consumption per kilometer.
+- **Backroads**: Moderate speeds with some variations in energy usage.
+- **Offroad**: Difficult terrain leading to higher energy consumption and reduced speed.
 
-    - Trucks
-        - Fuel Trucks
-        - Electric Trucks
+## Common Properties
+- **Vehicle Type**: Defines whether the vehicle is for passenger or material transport.
+- **Energy Source**: Specifies the type of fuel or energy the vehicle uses.
+- **Driving Conditions**: The type of roads the vehicle travels on, affecting its performance.
 
-- Energy Sources
-    - Fuel station
-        - for gasoline and diesel vehicles
-    - Electric charging station
-        - for electric vehicles
+## Actions and Resulting Changes
+- **Refuel/Recharge**: Vehicles can refuel at fuel stations or recharge at electric charging stations.
+- **Drive**: Vehicles can drive on different types of roads, affecting their speed and energy consumption.
+- **Calculate Consumption**: Determine the energy consumption based on vehicle type and driving conditions.
+- **Calculate Time**: Determine the travel time based on vehicle type and driving conditions.
 
-- Driving Conditions/Roads
-    - City Roads (1.2 consumption, 0.6 speed)
-    - Highways (0.8 consumption, 1.2 speed)
-    - Backroads (1.1 consumption, 0.9 speed)
-    - Offroad (1.5 consumption, 0.5 speed)
+## CRC Approach
+- **Object**: Vehicle
+    - **Responsibility**: Transport passengers or materials, consume energy, travel on roads.
+    - **Collaboration**: Interacts with energy sources (fuel stations, charging stations) and driving conditions (roads).
+
+- **Object**: Fuel Station
+    - **Responsibility**: Provide fuel for gasoline and diesel vehicles.
+    - **Collaboration**: Interacts with fuel-based vehicles.
+
+- **Object**: Charging Station
+    - **Responsibility**: Provide charging for electric vehicles.
+    - **Collaboration**: Interacts with electric vehicles.
+
+- **Object**: Road
+    - **Responsibility**: Define driving conditions affecting vehicle performance.
+    - **Collaboration**: Interacts with vehicles.
+
+## UML Diagram
+![UML Diagram](test.puml)
