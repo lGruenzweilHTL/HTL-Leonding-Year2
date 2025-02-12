@@ -7,8 +7,8 @@ public abstract class Product(string productName, string barcode, int quantity)
     public string ProductName { get; } = string.IsNullOrWhiteSpace(productName) ? Invalid : productName;
     public string Barcode { get; } = IsBarcodeValid(barcode) ? barcode : Invalid;
     public int Quantity { get; } = quantity < 0 ? 0 : quantity;
-    protected virtual string[] CsvColumnNames => ["ProductName", "Barcode", "Quantity"];
-    protected virtual string[] CsvColumnValues => [ProductName, Barcode, Quantity.ToString()];
+    protected virtual string[] CsvColumnNames => ["Barcode", "ProductName", "Quantity"];
+    protected virtual string[] CsvColumnValues => [Barcode, ProductName, Quantity.ToString()];
     public string GetCsvHeader() => string.Join(Separator, CsvColumnNames);
     public string ToCsv() => ToCsvLine(CsvColumnValues, Separator);
     protected static string ToCsvLine(string[] values, char separator) => string.Join(separator, values);

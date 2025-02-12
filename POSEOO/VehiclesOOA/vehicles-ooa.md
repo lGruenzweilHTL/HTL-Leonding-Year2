@@ -1,7 +1,4 @@
 # Vehicles OOA
-POSE2
-Prof. DI P. Frey
-HTBLA Leonding
 
 ## Introduction
 This document provides an object-oriented analysis (OOA) of the domain of vehicles, focusing on various types of vehicles, their energy sources, and driving conditions. The analysis identifies the key entities, their properties, and interactions within the domain.
@@ -64,5 +61,26 @@ Vehicles travel under different conditions that affect their performance:
     - **Responsibility**: Define driving conditions affecting vehicle performance.
     - **Collaboration**: Interacts with vehicles.
 
-## UML Diagram
-![UML Diagram](test.puml)
+## Implementation Approaches
+
+### Approach 1: Base Classes that Represent Transport Types
+This Approach focuses on creating base classes for passenger and material transport vehicles, with subclasses for specific vehicle types (e.g., fuel cars, electric cars, fuel trucks, electric trucks).
+The class diagram includes quite a lot of inheritance with a lot of common properties and methods in the base classes.
+
+![Transport Types](vehicles-ooa-approach1.png)
+
+### Approach 2: Base Classes for Energy Sources
+This Approach focuses on creating base classes for fuel and electric vehicles, with subclasses for specific vehicle types (e.g., fuel cars, electric cars, fuel trucks, electric trucks).
+The class diagram includes less inheritance in total, but the base classes have more properties and methods.
+
+![Energy Sources](vehicles-ooa-approach2.png)
+
+### Approach 3: Combining the first two approaches with Interfaces
+This Approach combines the previous two approaches by using interfaces to define common properties and methods for vehicle types and energy sources.
+It uses a lot of interfaces to define the common properties and methods, and the classes implement these interfaces.
+The class diagram is quite complex with a lot of abstraction and interfaces.
+This is a way more flexible approach than the previous two but also more complex to implement.#
+
+(This one is my personal favorite)
+
+![Interfaces](vehicles-ooa-combined-approach.png)

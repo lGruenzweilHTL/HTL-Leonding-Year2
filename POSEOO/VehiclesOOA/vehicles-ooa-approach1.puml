@@ -1,0 +1,45 @@
+@startuml
+abstract class Vehicle {
+    +string VehicleType
+    +string EnergySource
+    +void RefuelRecharge()
+    +void Drive()
+    +double CalculateConsumption()
+    +double CalculateTime()
+}
+
+abstract class PassengerTransport extends Vehicle
+abstract class MaterialTransport extends Vehicle
+
+class Car extends PassengerTransport
+class Bicycle extends PassengerTransport
+
+class FuelCar extends Car
+class ElectricCar extends Car
+
+class Truck extends MaterialTransport
+class FuelTruck extends Truck
+class ElectricTruck extends Truck
+
+abstract class FuelingStation {
+    +void ProvideFuel()
+}
+
+class FuelStation extends FuelingStation
+class ChargingStation extends FuelingStation
+
+enum RoadType {
+    CITY
+    HIGHWAY
+    BACKROAD
+    OFFROAD
+}
+
+Vehicle --o RoadType : drives on
+Vehicle --o FuelingStation : refuels at
+ElectricCar --o ChargingStation : recharges at
+FuelCar --o FuelStation : refuels at
+ElectricTruck --o ChargingStation : recharges at
+FuelTruck --o FuelStation : refuels at
+
+@enduml
