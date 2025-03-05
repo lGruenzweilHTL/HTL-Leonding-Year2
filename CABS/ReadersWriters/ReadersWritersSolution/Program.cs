@@ -3,8 +3,8 @@
 namespace ReadersWritersSolution;
 
 internal static class Program {
-    private static int numReaders = 300;
-    private static int numWriters = 4;
+    private static int numReaders = 1000;
+    private static int numWriters = 10;
 
     // Semaphores for concurrency
     private static SemaphoreSlim readSemaphore = new SemaphoreSlim(1, 1);
@@ -15,14 +15,14 @@ internal static class Program {
     private static bool resourceInUseByWriter = false;
 
     // Database location
-    private static int databaseX = 350;
+    private static int databaseX = 550;
     private static int databaseY = 250;
 
     // Default positions
-    private static int defaultReaderX = 100;
-    private static int defaultReaderY = 200;
-    private static int defaultWriterX = 700;
-    private static int defaultWriterY = 300;
+    private static int defaultReaderX = 50;
+    private static int defaultReaderY = 100;
+    private static int defaultWriterX = 750;
+    private static int defaultWriterY = 100;
 
     // Current positions
     private static float[] readerX;
@@ -53,14 +53,14 @@ internal static class Program {
 
         // Initialize positions
         for (int i = 0; i < numReaders; i++) {
-            readerX[i] = defaultReaderX + i * 40;
-            readerY[i] = defaultReaderY;
+            readerX[i] = defaultReaderX + (i % 25) * 15;
+            readerY[i] = defaultReaderY + (i / 25) * 15;
             readerTargetX[i] = readerX[i];
             readerTargetY[i] = readerY[i];
         }
         for (int i = 0; i < numWriters; i++) {
             writerX[i] = defaultWriterX;
-            writerY[i] = defaultWriterY + i * 40;
+            writerY[i] = defaultWriterY + i * 15;
             writerTargetX[i] = writerX[i];
             writerTargetY[i] = writerY[i];
         }
@@ -83,13 +83,14 @@ internal static class Program {
 
         // Render loop
         float moveSpeed = 5f; // movement speed
+        float writerMoveSpeed = 5f; // faster movement speed for writers
         while (!Raylib.WindowShouldClose()) {
             // Gradually move each reader/writer toward its target
             for (int i = 0; i < numReaders; i++) {
                 MoveToward(ref readerX[i], ref readerY[i], readerTargetX[i], readerTargetY[i], moveSpeed);
             }
             for (int i = 0; i < numWriters; i++) {
-                MoveToward(ref writerX[i], ref writerY[i], writerTargetX[i], writerTargetY[i], moveSpeed);
+                MoveToward(ref writerX[i], ref writerY[i], writerTargetX[i], writerTargetY[i], writerMoveSpeed);
             }
 
             Raylib.BeginDrawing();
@@ -106,12 +107,12 @@ internal static class Program {
 
             // Draw readers
             for (int i = 0; i < numReaders; i++) {
-                Raylib.DrawCircle((int)readerX[i], (int)readerY[i], 10, Color.Blue);
+                Raylib.DrawCircle((int)readerX[i], (int)readerY[i], 5, Color.Blue);
             }
 
             // Draw writers
             for (int i = 0; i < numWriters; i++) {
-                Raylib.DrawRectangle((int)writerX[i] - 10, (int)writerY[i] - 10, 20, 20, Color.Green);
+                Raylib.DrawRectangle((int)writerX[i] - 5, (int)writerY[i] - 5, 10, 10, Color.Green);
             }
 
             // Debug info
@@ -135,10 +136,10 @@ internal static class Program {
             readSemaphore.Release();
 
             // Move to database
-            readerTargetX[i] = databaseX - 50 + (i % 2 == 0 ? -20 : 20);
+            readerTargetX[i] = databaseX - 50 + (i % 2 == 0 ? -10 : 10);
             readerTargetY[i] = databaseY;
 
-            Thread.Sleep(1000); // reading
+            Thread.Sleep(2000); // reading
 
             // Move away
             readSemaphore.Wait();
@@ -146,9 +147,9 @@ internal static class Program {
             if (readers == 0) writeSemaphore.Release();
             readSemaphore.Release();
 
-            readerTargetX[i] = defaultReaderX + i * 40;
-            readerTargetY[i] = defaultReaderY;
-            Thread.Sleep(500);
+            readerTargetX[i] = defaultReaderX + (i % 25) * 15;
+            readerTargetY[i] = defaultReaderY + (i / 25) * 15;
+            Thread.Sleep(500); // let others have a chance
         }
     }
 
@@ -163,14 +164,14 @@ internal static class Program {
             writerTargetY[i] = databaseY + 20;
             resourceInUseByWriter = true;
 
-            Thread.Sleep(1000); // writing
+            Thread.Sleep(600); // writing
             resourceInUseByWriter = false;
             writeSemaphore.Release();
 
             // Move away
             writerTargetX[i] = defaultWriterX;
-            writerTargetY[i] = defaultWriterY + i * 40;
-            Thread.Sleep(1500);
+            writerTargetY[i] = defaultWriterY + i * 15;
+            Thread.Sleep(1500); // let others have a chance
         }
     }
 
