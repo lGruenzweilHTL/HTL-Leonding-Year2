@@ -1,8 +1,9 @@
-# Quellenanalyse zu Fußball-WM 2023
+# Quellenanalyse zu Fußball-WM 2022
 
 ## Seriöse Quellen
 - **ZDF**: Dokumentation "Geheimsache Katar"
 - **ORF**: Meschenrechtsfragen zum Bau der Stadien
+- **Soziale Medien**: Social Media von ZDF und ORF, aber auch private Kanäle, wie Conan Furlong, verbreiten vertrauenswürdige Informationen in den Sozialen Medien.
 
 ## Zweifelhafte Quellen
 - **Soziale Medien**: Auf TikTok, Instagram und Youtube wurden viele Beschwerden über Wetter und Organisation geäußert.
