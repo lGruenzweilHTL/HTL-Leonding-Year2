@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JSON Server Example</title>
+</head>
+<body>
+
+<h1>JSON Server + Vanilla JS Demo</h1>
+
+<!-- This is where we will insert the post data -->
+<div id="posts-container"><h2>Here all the posts will show up:</h2></div>
+<div id="single-post-container"><h2>Here a single post will show up:</h2></div>
+
+
+<script>
+    // Replace with the correct base URL/port if you're running on a different port
+    const BASE_URL = 'http://localhost:3000';
+
+    // Select the container element where we’ll show the posts
+    const postsContainer = document.getElementById('posts-container');
+
+    // 2. Select the container where we'll display the post
+    const singlePostContainer = document.getElementById('single-post-container');
+
+    // ---------------------------------------------
+    // 1. GET all posts
+    // ---------------------------------------------
+    fetch(`${BASE_URL}/posts`)
+        .then(response => response.json())
+        .then(data => {
+            console.log('GET /posts =>', data);
+        })
+        .catch(error => console.error('Error fetching posts:', error));
+
+
+    // ---------------------------------------------
+    // GET all posts and write it on the page
+    // ---------------------------------------------
+    fetch(`${BASE_URL}/posts`)
+        .then(response => response.json())
+        .then(posts => {
+            // 2. For each post, create an HTML element and insert it on the page
+            posts.forEach(post => {
+                // Create a new DIV (or any HTML element) for each post
+                const postDiv = document.createElement('div');
+
+                // Add some basic text/content (e.g., post title and views)
+                postDiv.textContent = `Title: ${post.title} | Views: ${post.views}`;
+
+                // Append the new DIV to the container
+                postsContainer.appendChild(postDiv);
+            });
+        })
+        .catch(error => console.error('Error fetching posts:', error));
+
+    // ---------------------------------------------
+    // GET a single post by id (e.g., id = 1) and log it to the console
+    // ---------------------------------------------
+    fetch(`${BASE_URL}/posts/3`)
+        .then(response => response.json())
+        .then(data => {
+            console.log('GET /posts/3 =>', data);
+        })
+        .catch(error => console.error('Error fetching post:', error));
+
+    // Fetch the post with id=3 and show it on page
+    fetch(`${BASE_URL}/posts/3`)
+        .then(response => response.json())
+        .then(post => {
+            // Create an element to show the post on the page
+            const postDiv = document.createElement('div');
+
+            // Add some basic text/content (e.g., post title and views)
+            postDiv.textContent = `Title: ${post.title} | Views: ${post.views}`;
+
+            // Append this element to the container in the HTML
+            singlePostContainer.appendChild(postDiv);
+        })
+        .catch(error => {
+            console.error('Error fetching post:', error);
+        });
+
+      // ---------------------------------------------
+    // 3. POST (create) a new post
+    // ---------------------------------------------
+    const newPost = {
+      id: '3',           // JSON Server won't create auto IDs for strings,
+                         // but if id is numeric, it can auto-increment.
+      title: 'Third Post',
+      views: 300
+    };
+
+    fetch(`${BASE_URL}/posts`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newPost)
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log('POST /posts => Created:', data);
+      })
+      .catch(error => console.error('Error creating post:', error));
+
+    // ---------------------------------------------
+    // 4. PUT or PATCH (update) an existing post
+    //    - PUT: replaces the entire resource
+    //    - PATCH: updates only the specified fields
+    // ---------------------------------------------
+    const updatedFields = { title: 'Updated Title', views: 999 };
+
+    fetch(`${BASE_URL}/posts/1`, {
+      method: 'PATCH', // or 'PUT' if you want to replace the entire object
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(updatedFields)
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log('PATCH /posts/1 => Updated:', data);
+      })
+      .catch(error => console.error('Error updating post:', error));
+
+    // ---------------------------------------------
+    // 5. DELETE a post by id
+    // ---------------------------------------------
+    fetch(`${BASE_URL}/posts/3`, {
+      method: 'DELETE'
+    })
+      .then(response => {
+        if (response.ok) {
+          console.log('DELETE /posts/3 => Deleted successfully');
+        } else {
+          console.error('Failed to delete post:', response.statusText);
+        }
+      })
+      .catch(error => console.error('Error deleting post:', error));
+
+    // ---------------------------------------------
+    // 6. GET all comments (example for another route)
+    // ---------------------------------------------
+    fetch(`${BASE_URL}/comments`)
+      .then(response => response.json())
+      .then(data => {
+        console.log('GET /comments =>', data);
+      })
+      .catch(error => console.error('Error fetching comments:', error));
+
+    // ---------------------------------------------
+    // 7. GET profile (single object)
+    // ---------------------------------------------
+    fetch(`${BASE_URL}/profile`)
+      .then(response => response.json())
+      .then(data => {
+        console.log('GET /profile =>', data);
+      })
+      .catch(error => console.error('Error fetching profile:', error));
+</script>
+</body>
+</html>
