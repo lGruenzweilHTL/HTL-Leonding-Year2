@@ -1,0 +1,25 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0" version="26.1.1">
+  <diagram name="Seite-1" id="6Ps75FNT33wLPLJ9yeUt">
+    <mxGraphModel dx="1042" dy="531" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="wIP7XFdSm4giC7xWOSsZ-1" value="Tab_Auto&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Kennzeichen (Primärschlüssel)&lt;/div&gt;&lt;div&gt;Marke&lt;/div&gt;&lt;div&gt;Modell&lt;/div&gt;&lt;div&gt;Baujahr&lt;/div&gt;&lt;div&gt;Kilometerstand&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="130" width="180" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="wIP7XFdSm4giC7xWOSsZ-2" value="Tab_Person&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;SzVNr (Primärschlüssel)&lt;/div&gt;&lt;div&gt;Vorname&lt;/div&gt;&lt;div&gt;Zuname&lt;/div&gt;&lt;div&gt;Geschlecht&lt;/div&gt;&lt;div&gt;Autokennzeichen (Fremdschlüssel)&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="140" width="250" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="wIP7XFdSm4giC7xWOSsZ-4" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.996;exitY=0.437;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.12;entryY=0.769;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="wIP7XFdSm4giC7xWOSsZ-1" target="wIP7XFdSm4giC7xWOSsZ-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="220" y="290" as="sourcePoint" />
+            <mxPoint x="320" y="290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wIP7XFdSm4giC7xWOSsZ-5" value="1:1" style="edgeLabel;resizable=0;html=1;;align=center;verticalAlign=middle;" connectable="0" vertex="1" parent="wIP7XFdSm4giC7xWOSsZ-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
