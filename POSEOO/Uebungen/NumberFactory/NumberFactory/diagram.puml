@@ -1,0 +1,66 @@
+@startuml
+
+interface INumbers {
+  + long this[int index]
+  + long LowerBound
+  + long UpperBound
+  + int Length
+  + IEnumerator<long> GetEnumerator()
+}
+
+abstract class AbstractNumbers {
+  # List<long> _list
+  + long this[int index]
+  + long LowerBound
+  + long UpperBound
+  + int Length
+  # {abstract} List<long> GenerateNumbers(long lowerBound, long upperBound)
+  + IEnumerator<long> GetEnumerator()
+}
+
+class EvenNumbers {
+  + EvenNumbers(long lowerBound, long upperBound)
+  # List<long> GenerateNumbers(long lowerBound, long upperBound)
+}
+
+class OddNumbers {
+  + OddNumbers(long lowerBound, long upperBound)
+  # List<long> GenerateNumbers(long lowerBound, long upperBound)
+}
+
+class PrimeNumbers {
+  + PrimeNumbers(long lowerBound, long upperBound)
+  # List<long> GenerateNumbers(long lowerBound, long upperBound)
+  - bool IsPrime(long l)
+}
+
+class SquareNumbers {
+  + SquareNumbers(long lowerBound, long upperBound)
+  # List<long> GenerateNumbers(long lowerBound, long upperBound)
+}
+
+enum NumberType {
+  Even
+  Odd
+  Square
+  Prime
+}
+
+class Factory {
+  + {static} INumbers Create(NumberType type, long lowerBound, long upperBound)
+}
+
+INumbers <|.. AbstractNumbers
+AbstractNumbers <|-- EvenNumbers
+AbstractNumbers <|-- OddNumbers
+AbstractNumbers <|-- PrimeNumbers
+AbstractNumbers <|-- SquareNumbers
+
+Factory -> INumbers
+Factory -> EvenNumbers
+Factory -> OddNumbers
+Factory -> PrimeNumbers
+Factory -> SquareNumbers
+Factory -> NumberType
+
+@enduml
