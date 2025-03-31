@@ -1,0 +1,33 @@
+Messung des pH-Werts:
+
+Um genauere Aussagen über den ph-Wert machen zu können, verwendet man Mischindikatoren, sogennante Universalindikatoren oder ein ph-Meter.
+
+V: Messung des ph-Werts von Lösungen aus dem Alltag.
+
+|      Lösung      | ph-Wert | Art der Lösung |
+| ---------------- | ------- | -------------- |
+... (10 zeilen)
+
+
+5) Neutralisation - Reaktion zwischen Säuren und Basen
+
+V: Vermischen von verdünnter Salzsäure mit verdünnter Natronlauge
+
+- Bis zum ph-Wert 7 (=neutral) 
+- Kontrolle mit ph-Papier.
+- Eindampfen der Lösung und Kosten des Produkts
+
+H3O+ + Cl-  => verdünnte Salzsäure
++
+Na+ + OH- + H20  => verdünnte Natronlauge
+==(pH=7)==>
+Na+ + Cl- + 3H20 (in Wasser gelöstes Kochsalz)
+
+
+Neutralisation:
+Säure + Lauge ==(pH=7)==> Salz + Wasser
+
+Verwendung:
+- Herstellung von Salzen
+- Abwasseraufbereitung
+- Stoffwechsel
