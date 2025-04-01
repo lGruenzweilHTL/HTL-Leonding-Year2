@@ -1,0 +1,25 @@
+Name;Category;Low;High;Highest;Spectrum;Loudness
+Violin;Stringed Instrument;G3;E7;A7;All;Middle
+Cello;Stringed Instrument;C2;A5;C6;All;Middle
+Double Bass;Stringed Instrument;E1;C5;G5;All;Middle
+Electric Guitar;Stringed Instrument;E2;E6;A6;All;High
+Jackhammer;Tool;C1;C3;G3;Odd;Deafening
+Chainsaw;Tool;G1;G4;D5;Odd;Very High
+Drillhammer;Tool;E1;D4;A4;Odd;Very High
+Car Engine;Transport;G0;C4;E4;Even;High
+Train Horn;Transport;C2;C5;G5;Odd;Very High
+Jet Engine;Transport;A0;A4;D5;All;Deafening
+Bus;Transport;E0;C3;G3;Even;Middle
+Birdsong;Nature;D4;G6;C7;All;Middle
+Thunder;Nature;E0;A2;C3;Odd;Deafening
+Wind;Nature;C1;G4;D5;Even;Middle
+General City Noise;Nature;C1;C6;A6;All;High
+Flute;Woodwind;C4;C7;D7;All;Middle
+Clarinet;Woodwind;E3;A6;C7;Odd;Middle
+Saxophone;Woodwind;A2;F6;A6;All;High
+Recorder;Woodwind;C5;C7;E7;Even;Middle
+Snare Drum;Percussion;D3;A5;C6;Odd;High
+Bass Drum;Percussion;E1;G3;C4;Even;Very High
+Cymbal;Percussion;A3;C8;E8;All;Deafening
+Synthesizer;Electronic;C0;C8;C9;All;Varies
+

@@ -1,0 +1,39 @@
+@startuml
+
+interface ISoundQuality {
+}
+
+interface ITonalQuality extends ISoundQuality {
+    + string Low
+    + string High
+    + string Loudness
+}
+
+interface ISpectralQuality extends ISoundQuality {
+    + string Spectrum
+}
+
+interface ISoundProducer {
+    + Sound MakeSound()
+    + Sound MakeSound(MusicalNote n)
+}
+
+interface ISoundEmitter extends ISoundProducer, ITonalQuality, ISpectralQuality {
+    + string Name
+}
+
+abstract class SoundCategory {
+    + string CategoryName
+    + static SoundCategory CreateFromCSV(string name, string category, string low, string high, string highest, string spectrum, string loudness)
+}
+
+class StringedInstrument extends SoundCategory implements ISoundEmitter
+class Woodwind extends SoundCategory implements ISoundEmitter
+class Percussion extends SoundCategory implements ISoundEmitter
+class Tool extends SoundCategory implements ISoundEmitter
+class Transport extends SoundCategory implements ISoundEmitter
+class Nature extends SoundCategory implements ISoundEmitter
+class Electronic extends SoundCategory implements ISoundEmitter
+
+@enduml
+
