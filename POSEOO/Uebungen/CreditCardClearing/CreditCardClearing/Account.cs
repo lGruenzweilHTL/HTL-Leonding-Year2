@@ -57,9 +57,8 @@ namespace CreditCardClearing
         /// <param name="creditCardNumber"></param>
         /// <returns></returns>
         public static bool IsCreditCardValid(string creditCardNumber) {
-            return creditCardNumber.Length == 16 
-                && creditCardNumber.All(c => char.IsNumber(c) || c == '-') 
-                && CalculateCheckDigit(creditCardNumber) == creditCardNumber[^1];
+            return creditCardNumber.All(c => char.IsNumber(c) || c == '-') 
+                   && CalculateCheckDigit(creditCardNumber) == creditCardNumber[^1] - '0';
         }
 
         /// <summary>
@@ -72,15 +71,30 @@ namespace CreditCardClearing
             int idx = 0;
             for (int i = 0; i < creditCardNumber.Length - 1; i++) {
                 char c = creditCardNumber[i];
-                if (char.IsNumber(c)) continue;
+                if (!char.IsNumber(c)) continue;
 
                 int digit = c - '0';
-                sum += digit * (idx % 2 == 0 ? 2 : 1);
+                if (idx % 2 == 0)
+                {
+                    sum += SumDigits(digit * 2);
+                }
+                else sum += digit;
                 idx++;
             }
 
             int next10 = 10 * (int)Math.Ceiling(sum / 10d);
             return next10 - sum;
+        }
+
+        private static int SumDigits(int num)
+        {
+            int sum = 0;
+            while (num > 0)
+            {
+                sum += num % 10;
+                num /= 10;
+            }
+            return sum;
         }
     }
 }

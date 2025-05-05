@@ -101,7 +101,7 @@ public class AccountManagerTests
         {
             "11.11.2009;Mayer;6288081682946785;Fussl;558,88",
             "09.06.2008;Michalik;1771914536488775;Hervis;817,32",
-            "01.01.2010;Smith;1234567890123456;Amazon;100,00"
+            "01.01.2010;Smith;2718-2818-2845-8567;Amazon;100,00"
         };
 
         _target.ReadCsv(lines, true);
@@ -119,7 +119,7 @@ public class AccountManagerTests
         {
             "11.11.2009;Mayer;6288081682946785;Fussl;558,88",
             "09.06.2008;Michalik;1771914536488775;Hervis;817,32",
-            "11.11.2009;Smith;1234567890123456;Amazon;100,00"
+            "11.11.2009;Smith;2718-2818-2845-8567;Amazon;100,00"
         };
 
         _target.ReadCsv(lines, true);

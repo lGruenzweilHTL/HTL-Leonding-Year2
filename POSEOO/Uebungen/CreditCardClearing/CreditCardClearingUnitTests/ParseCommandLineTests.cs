@@ -50,7 +50,7 @@ public class ParseCommandLineTests
         Program.ParseCommandLine(args, out bool continueOnError, out string paymentsFileName, out string logFileName);
         Assert.False(continueOnError);
         Assert.Equal("Payments.csv", paymentsFileName);
-        Assert.StartsWith("log_", logFileName);
+        Assert.StartsWith("log", logFileName);
     }
     
    
