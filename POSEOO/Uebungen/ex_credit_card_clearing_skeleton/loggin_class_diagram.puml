@@ -1,0 +1,45 @@
+@startuml
+namespace Logging {
+    interface ILogger {
+        + LogError(string message)
+        + LogInfo(string message)
+    }
+
+    enum LogLevel {
+        Error
+        Warning
+        Info
+    }
+
+    abstract class AbstractLogger {
+        - LogLevel LogLevel
+        + LogError(string logText)
+        + LogInfo(string logText)
+        # Log(LogLevel level, string message)
+    }
+
+    class ConsoleLogger {
+        + ConsoleLogger(LogLevel level)
+        # Log(LogLevel level, string message)
+    }
+
+    class FileLogger {
+        - string _filePath
+        + FileLogger(string filePath)
+        + FileLogger(string filePath, LogLevel level)
+        # Log(LogLevel level, string message)
+    }
+
+    class LoggerCollection {
+        - ILogger[] _loggers
+        + LoggerCollection(params ILogger[] loggers)
+        + LogError(string message)
+        + LogInfo(string message)
+    }
+
+    ILogger <|.. AbstractLogger
+    AbstractLogger <|-- ConsoleLogger
+    AbstractLogger <|-- FileLogger
+    ILogger <|-- LoggerCollection
+}
+@enduml
