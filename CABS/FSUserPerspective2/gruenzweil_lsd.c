@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 int main(void) {
-    FILE *fp = _popen("ls -l", "r");
+    FILE *fp = popen("ls", "r");
 
     if (fp == NULL) {
         perror("popen");
@@ -13,6 +13,6 @@ int main(void) {
     while (fgets(buffer, sizeof(buffer), fp) != NULL) {
         printf("%s", buffer);
     }
-    _pclose(fp);
+    pclose(fp);
     return 0;
 }
