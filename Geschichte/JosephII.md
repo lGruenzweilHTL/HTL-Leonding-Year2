@@ -25,7 +25,7 @@
 - **Beginn der jüdischen Emanzipation.**
 
 ### 2. **Kirchenreform**
-- Aufhebung kontemplativer Klöster (~1/3 aller Klöster).
+- Aufhebung kontemplativer Klöster (~1/3 aller Klöster). Kontemplativ: keine für die Allgemeinheit nützliche Tätigkeit
 - Gründung eines Religionsfonds zur Dotierung neuer Pfarren.
 - Unterordnung der Kirche unter den Staat:
   - Päpstliche Anordnungen nur nach staatlicher Genehmigung.
@@ -37,6 +37,7 @@
 - Ausbau der Wohlfahrt:
   - Gründung des Allgemeinen Krankenhauses in Wien (1784).
   - Förderung der medizinischen Ausbildung (Wiener Medizinische Schule).
+  - Armenhäuser; Gebärklinik für Frauen
 
 ### 4. **Wirtschaft & Kultur**
 - Wirtschaftsreformen → Aufstieg eines selbstbewussten Bürgertums.
@@ -69,4 +70,4 @@
 - Hinterließ ein zwiespältiges Erbe: Idealismus vs. Realität.
 
 
-Joseph II. ging unter dem Namen **Graf Falkenstein** durch das Land, um sich die Lebensverhältnisse der Menschen anzusehen.
+Joseph II. ging unter dem Namen **Graf Falkenstein** durch das Land (und ganz Europa), um sich die Lebensverhältnisse der Menschen anzusehen.
